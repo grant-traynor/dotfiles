@@ -21,6 +21,8 @@ Plug 'vim-scripts/ZoomWin'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'altercation/vim-colors-solarized'
+Plug 'airblade/vim-gitgutter'
 " - initialise the system
 call plug#end()
 
@@ -32,6 +34,10 @@ map <leader>n :NERDTreeToggle<CR>
 map <leader>s :SyntasticToggleMode<CR>
 
 """"""""""""""""""""""""""""""""""""
+" Color Scheme / Soalrized
+let g:solarized_termcolors=256
+
+""""""""""""""""""""""""""""""""""""
 " Airline 
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
@@ -39,9 +45,6 @@ set laststatus=2
 """"""""""""""""""""""""""""""""""""
 " Syntastic Configuration
 " Prefer airline's status line to Syntastic
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
