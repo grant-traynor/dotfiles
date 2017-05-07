@@ -19,15 +19,16 @@ Plug 'vim-syntastic/syntastic'
 Plug 'Valloric/YouCompleteMe'
 Plug 'python-mode/python-mode'
 Plug 'tpope/vim-fugitive'
+Plug 'vim-scripts/ZoomWin'
 " - initialise the system
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""
 " Key Mappings
 " NERDTREE
-map <C-n> :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
 " Syntastic
-map <C-s> :SyntasticToggleMode<CR>
+map <leader>s :SyntasticToggleMode<CR>
 
 """"""""""""""""""""""""""""""""""""
 " Syntastic Configuration
