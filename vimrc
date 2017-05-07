@@ -1,5 +1,3 @@
-
-
 """"""""""""""""""""""""""""""""""""
 " vimplug
 " - Autoinstall If Not Present
@@ -20,6 +18,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'python-mode/python-mode'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/ZoomWin'
+Plug 'tpope/vim-surround'
 " - initialise the system
 call plug#end()
 
@@ -43,7 +42,7 @@ let g:syntastic_check_on_wq = 0
 
 """"""""""""""""""""""""""""""""""""
 " Python Setup
-let g:syntastic_python_checkers = ["python"]
+let g:syntastic_python_checkers = ["python", 'pylint']
 
 """"""""""""""""""""""""""""""""""""
 " Tab Movement Shortcuts
