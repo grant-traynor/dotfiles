@@ -19,6 +19,8 @@ Plug 'python-mode/python-mode'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/ZoomWin'
 Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " - initialise the system
 call plug#end()
 
@@ -28,6 +30,10 @@ call plug#end()
 map <leader>n :NERDTreeToggle<CR>
 " Syntastic
 map <leader>s :SyntasticToggleMode<CR>
+
+""""""""""""""""""""""""""""""""""""
+" Airline 
+let g:airline#extensions#tabline#enabled = 1
 
 """"""""""""""""""""""""""""""""""""
 " Syntastic Configuration
@@ -42,7 +48,7 @@ let g:syntastic_check_on_wq = 0
 
 """"""""""""""""""""""""""""""""""""
 " Python Setup
-let g:syntastic_python_checkers = ["python", 'pylint']
+let g:syntastic_python_checkers = ["python"]
 
 """"""""""""""""""""""""""""""""""""
 " Tab Movement Shortcuts
