@@ -13,7 +13,8 @@ PS1='[\u@\h \W]\$ '
 set -o vi
 
 # Use Vim as Vi if it's installed.
-if [ -f "/usr/bin/vim" ];
+if [ -f "/usr/bin/vim" ]
+then
  alias vi="vim"
 else
  alias vim="vi"
