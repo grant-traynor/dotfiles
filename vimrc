@@ -35,7 +35,10 @@ map <leader>s :SyntasticToggleMode<CR>
 
 """"""""""""""""""""""""""""""""""""
 " Color Scheme / Soalrized
-let g:solarized_termcolors=256
+syntax enable
+set background=dark
+colorscheme solarized
+"let g:solarized_termcolors=256
 
 """"""""""""""""""""""""""""""""""""
 " Airline 

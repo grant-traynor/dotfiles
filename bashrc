@@ -21,3 +21,7 @@ else
 fi
 
 export EDITOR=vim
+
+# Bash Powerline
+source ~/dotfiles/bash-powerline.sh
+
