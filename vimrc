@@ -41,6 +41,8 @@ map <leader>s :SyntasticToggleMode<CR>
 " Color Scheme / Soalrized
 syntax enable
 set background=dark
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
 colorscheme solarized
 "let g:solarized_termcolors=256
 
