@@ -1,4 +1,8 @@
 """"""""""""""""""""""""""""""""""""
+" Mouse Settings
+set mouse=n
+
+""""""""""""""""""""""""""""""""""""
 " vimplug
 " - Autoinstall If Not Present
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -37,6 +41,8 @@ map <leader>s :SyntasticToggleMode<CR>
 " Color Scheme / Soalrized
 syntax enable
 set background=dark
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
 colorscheme solarized
 "let g:solarized_termcolors=256
 
@@ -55,7 +61,8 @@ let g:syntastic_check_on_wq = 0
 
 """"""""""""""""""""""""""""""""""""
 " Python Setup
-let g:syntastic_python_checkers = ["python"]
+let g:pymode_python = 'python'
+"let g:syntastic_python_checkers = ["python2"]
 
 """"""""""""""""""""""""""""""""""""
 " Tab Movement Shortcuts
