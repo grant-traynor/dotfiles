@@ -25,3 +25,8 @@ export EDITOR=vim
 # Bash Powerline
 source ~/dotfiles/bash-powerline.sh
 
+# Bash Git Completion
+if [ -f "/usr/share/bash-completion/bash_completion" ]
+then
+  source /usr/share/bash-completion/bash_completion
+fi
