@@ -18,8 +18,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-syntastic/syntastic'
-Plug 'Valloric/YouCompleteMe'
-Plug 'python-mode/python-mode'
+" Plug 'Valloric/YouCompleteMe'
+" Plug 'python-mode/python-mode'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/ZoomWin'
 Plug 'tpope/vim-surround'
@@ -27,6 +27,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
 Plug 'airblade/vim-gitgutter'
+Plug 'pangloss/vim-javascript'
 " - initialise the system
 call plug#end()
 
@@ -43,8 +44,8 @@ syntax enable
 set background=dark
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
+let g:solarized_termcolors=256
 colorscheme solarized
-"let g:solarized_termcolors=256
 
 """"""""""""""""""""""""""""""""""""
 " Airline 
@@ -62,6 +63,7 @@ let g:syntastic_check_on_wq = 0
 """"""""""""""""""""""""""""""""""""
 " Python Setup
 let g:pymode_python = 'python'
+let g:pymode_folding = 0
 "let g:syntastic_python_checkers = ["python2"]
 
 """"""""""""""""""""""""""""""""""""
