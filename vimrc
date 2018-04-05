@@ -18,7 +18,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-syntastic/syntastic'
-Plug 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
 "Plug 'python-mode/python-mode'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/ZoomWin'
@@ -28,6 +28,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
 Plug 'airblade/vim-gitgutter'
 Plug 'chrisbra/Colorizer'
+Plug 'pangloss/vim-javascript'
 " - initialise the system
 call plug#end()
 
@@ -44,8 +45,8 @@ syntax enable
 set background=dark
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
+let g:solarized_termcolors=256
 colorscheme solarized
-"let g:solarized_termcolors=256
 
 """"""""""""""""""""""""""""""""""""
 " Airline 
