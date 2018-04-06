@@ -18,7 +18,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-syntastic/syntastic'
-Plug 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
 "Plug 'python-mode/python-mode'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/ZoomWin'
@@ -27,6 +27,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
 Plug 'airblade/vim-gitgutter'
+Plug 'chrisbra/Colorizer'
+Plug 'pangloss/vim-javascript'
 " - initialise the system
 call plug#end()
 
@@ -47,8 +49,8 @@ syntax enable
 set background=dark
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
+let g:solarized_termcolors=256
 colorscheme solarized
-"let g:solarized_termcolors=256
 
 """"""""""""""""""""""""""""""""""""
 " Airline 
@@ -62,11 +64,15 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_python_python_exec = '/usr/bin/python2'
+let g:syntastic_python_checkers = ['python']
+"let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 
 """"""""""""""""""""""""""""""""""""
 " Python Setup
-let g:pymode_python = 'python'
-"let g:syntastic_python_checkers = ["python2"]
+"let g:pymode_python = ''
+"let g:pymode_python = 'python2'
+let g:pymode_lint_on_write = 0
 
 """"""""""""""""""""""""""""""""""""
 " Tab Movement Shortcuts
