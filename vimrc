@@ -19,7 +19,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'Valloric/YouCompleteMe'
-Plug 'python-mode/python-mode'
+"Plug 'python-mode/python-mode'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/ZoomWin'
 Plug 'tpope/vim-surround'
@@ -29,6 +29,10 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'airblade/vim-gitgutter'
 " - initialise the system
 call plug#end()
+
+""""""""""""""""""""""""""""""""""""
+" Encoding
+set encoding=utf-8
 
 """"""""""""""""""""""""""""""""""""
 " Key Mappings
