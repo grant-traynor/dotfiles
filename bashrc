@@ -30,3 +30,12 @@ if [ -f "/usr/share/bash-completion/bash_completion" ]
 then
   source /usr/share/bash-completion/bash_completion
 fi
+
+# Node Version Manager
+source /usr/share/nvm/init-nvm.sh
+
+###-tns-completion-start-###
+if [ -f /home/gkt/.tnsrc ]; then 
+    source /home/gkt/.tnsrc 
+fi
+###-tns-completion-end-###
