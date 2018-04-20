@@ -29,6 +29,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'airblade/vim-gitgutter'
 Plug 'chrisbra/Colorizer'
 Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
 " - initialise the system
 call plug#end()
 

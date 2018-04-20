@@ -39,3 +39,10 @@ if [ -f /home/gkt/.tnsrc ]; then
     source /home/gkt/.tnsrc 
 fi
 ###-tns-completion-end-###
+
+# Android
+export ANDROID_HOME=$HOME/local/android-sdk
+export PATH=$PATH:$HOME/local/android-studio/bin
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
