@@ -7,6 +7,4 @@ function run {
   fi
 }
 
-run xscreensaver
-run mpd
-run compton -b -d :1
+run xrandr --output DVI-D-0 --right-of DP-1

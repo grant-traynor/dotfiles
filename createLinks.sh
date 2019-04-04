@@ -11,7 +11,7 @@ ln -s dotfiles/gvimrc ~/.gvimrc
 ln -s ~/dotfiles/vim/after ~/.vim/after
 
 # Awesome
-ln -s ~/dotfiles/awesome ~/.config/awesome
+#ln -s ~/dotfiles/awesome ~/.config/awesome
 
 # Termite
 mkdir -p ~/.config/termite
