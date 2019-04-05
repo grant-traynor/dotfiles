@@ -128,6 +128,12 @@ __powerline() {
         printf " $GIT_BRANCH_SYMBOL$branch$marks "
     }
 
+    __virtualenv() {
+        local venv="$(basename "$VIRTUAL_ENV")"
+        [ -n "$venv" ] || return  # no virtualenv
+	printf " $venv "
+    }
+
     ps1() {
         # Check the exit code of the previous command and display different
         # colors in the prompt accordingly. 
@@ -145,7 +151,8 @@ __powerline() {
         # Related fix in git-bash: https://github.com/git/git/blob/9d77b0405ce6b471cb5ce3a904368fc25e55643d/contrib/completion/git-prompt.sh#L324
         if shopt -q promptvars; then
             __powerline_git_info="$(__git_info)"
-            PS1+="$BG_BLUE$FG_BASE3\${__powerline_git_info}$RESET"
+            __powerline_virtualenv="$(__virtualenv)"
+            PS1+="$BG_BLUE$FG_BASE3\${__powerline_git_info}$BG_MAGENTA$FG_BASE3\${__powerline_virtualenv}$RESET"
         else
             # promptvars is disabled. Avoid creating unnecessary env var.
             PS1+="$BG_BLUE$FG_BASE3$(__git_info)$RESET"
