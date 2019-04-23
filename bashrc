@@ -51,7 +51,7 @@ fi
 #fi
 
 # Node Version Manager
-source /usr/share/nvm/init-nvm.sh
+#source /usr/share/nvm/init-nvm.sh
 
 ###-tns-completion-start-###
 if [ -f /home/gkt/.tnsrc ]; then 
