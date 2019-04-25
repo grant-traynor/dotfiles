@@ -32,13 +32,15 @@ then
 fi
 
 # Node Version Manager
-#source /usr/share/nvm/init-nvm.sh
+if [ -f /usr/share/nvm/init-nvm.sh ]
+then
+  source /usr/share/nvm/init-nvm.sh
+fi
 
-###-tns-completion-start-###
+# TNS Completion
 if [ -f /home/gkt/.tnsrc ]; then 
     source /home/gkt/.tnsrc 
 fi
-###-tns-completion-end-###
 
 # Android
 export ANDROID_HOME=$HOME/local/android-sdk
