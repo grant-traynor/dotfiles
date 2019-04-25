@@ -45,10 +45,10 @@ else
 fi
 
 # Bash Git Completion
-#if [ -f "/usr/share/git/completion/git-completion.bash"]
-#then
-  #source /usr/share/git/completion/git-completion.bash
-#fi
+if [ -f "/usr/share/git/completion/git-completion.bash" ]
+then
+  source /usr/share/git/completion/git-completion.bash
+fi
 
 # Node Version Manager
 if [ -f /usr/share/nvm/init-nvm.sh ]
