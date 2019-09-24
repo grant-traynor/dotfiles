@@ -67,5 +67,11 @@ export PATH=$PATH:$HOME/local/android-studio/bin
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+# Flutter
+if [ -d $HOME/local/flutter/.pub-cache/bin ]
+then
+  export PATH="$PATH":"$HOME/local/flutter/.pub-cache/bin"
+fi
+
 # Terminfo
 export TERM=xterm-256color

@@ -12,12 +12,15 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 " - setup
 call plug#begin('~/.vim/plugged')
+" - Language Support Plugins
+Plug 'natebosch/vim-lsc'
+Plug 'natebosch/vim-lsc-dart'
 " - plugins
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'vim-syntastic/syntastic'
+"Plug 'vim-syntastic/syntastic'
 "Plug 'Valloric/YouCompleteMe'
 "Plug 'python-mode/python-mode'
 Plug 'tpope/vim-fugitive'
@@ -30,6 +33,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'chrisbra/Colorizer'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'thosakwe/vim-flutter'
 " - initialise the system
 call plug#end()
 
