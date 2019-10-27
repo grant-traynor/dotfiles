@@ -30,6 +30,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'chrisbra/Colorizer'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
+Plug 'maksimr/vim-jsbeautify'
 " - initialise the system
 call plug#end()
 

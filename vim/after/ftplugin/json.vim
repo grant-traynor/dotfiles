@@ -7,3 +7,4 @@ setlocal expandtab
 setlocal autoindent
 setlocal smarttab
 setlocal formatoptions=croql
+setlocal foldmethod=syntax

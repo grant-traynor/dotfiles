@@ -67,3 +67,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Terminfo
 export TERM=xterm-256color
+
+# Ansible Vault Password
+export ANSIBLE_VAULT_PASSWORD_FILE=$HOME/.ssh/ansible_vault
