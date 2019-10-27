@@ -8,3 +8,4 @@ setlocal autoindent
 setlocal smarttab
 setlocal formatoptions=croql
 setlocal foldmethod=syntax
+setlocal foldlevel=20

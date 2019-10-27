@@ -12,14 +12,14 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 " - setup
 call plug#begin('~/.vim/plugged')
+" - Language Support Plugins
+Plug 'natebosch/vim-lsc'
+Plug 'natebosch/vim-lsc-dart'
 " - plugins
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'vim-syntastic/syntastic'
-"Plug 'Valloric/YouCompleteMe'
-"Plug 'python-mode/python-mode'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/ZoomWin'
 Plug 'tpope/vim-surround'
@@ -31,8 +31,12 @@ Plug 'chrisbra/Colorizer'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'maksimr/vim-jsbeautify'
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'thosakwe/vim-flutter'
 " - initialise the system
 call plug#end()
+" - enable the python lsc
+let g:lsc_server_commands = { 'python' : 'pyls'}
 
 """"""""""""""""""""""""""""""""""""
 " Encoding

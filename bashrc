@@ -45,25 +45,33 @@ else
 fi
 
 # Bash Git Completion
-#if [ -f "/usr/share/git/completion/git-completion.bash"]
-#then
-  #source /usr/share/git/completion/git-completion.bash
-#fi
+if [ -f "/usr/share/git/completion/git-completion.bash" ]
+then
+  source /usr/share/git/completion/git-completion.bash
+fi
 
 # Node Version Manager
-#source /usr/share/nvm/init-nvm.sh
+if [ -f /usr/share/nvm/init-nvm.sh ]
+then
+  source /usr/share/nvm/init-nvm.sh
+fi
 
-###-tns-completion-start-###
+# TNS Completion
 if [ -f /home/gkt/.tnsrc ]; then 
     source /home/gkt/.tnsrc 
 fi
-###-tns-completion-end-###
 
 # Android
 export ANDROID_HOME=$HOME/local/android-sdk
 export PATH=$PATH:$HOME/local/android-studio/bin
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# Flutter
+if [ -d $HOME/local/flutter/.pub-cache/bin ]
+then
+  export PATH="$PATH":"$HOME/local/flutter/.pub-cache/bin"
+fi
 
 # Terminfo
 export TERM=xterm-256color
