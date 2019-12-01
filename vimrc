@@ -15,13 +15,12 @@ call plug#begin('~/.vim/plugged')
 " - Language Support Plugins
 Plug 'natebosch/vim-lsc'
 Plug 'natebosch/vim-lsc-dart'
+let g:lsc_server_commands = {'python' : 'pyls'}
 " - plugins
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
-"Plug 'vim-syntastic/syntastic'
-"Plug 'Valloric/YouCompleteMe'
 "Plug 'python-mode/python-mode'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/ZoomWin'
@@ -62,23 +61,6 @@ colorscheme solarized
 " Airline 
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
-
-""""""""""""""""""""""""""""""""""""
-" Syntastic Configuration
-" Prefer airline's status line to Syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_python_exec = '/usr/bin/python2'
-let g:syntastic_python_checkers = ['python']
-"let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
-
-""""""""""""""""""""""""""""""""""""
-" Python Setup
-"let g:pymode_python = ''
-"let g:pymode_python = 'python2'
-let g:pymode_lint_on_write = 0
 
 """"""""""""""""""""""""""""""""""""
 " Tab Movement Shortcuts
