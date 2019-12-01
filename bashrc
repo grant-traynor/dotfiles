@@ -75,3 +75,6 @@ fi
 
 # Terminfo
 export TERM=xterm-256color
+
+# Ansible Vault Password
+export ANSIBLE_VAULT_PASSWORD_FILE=$HOME/.ssh/ansible_vault
