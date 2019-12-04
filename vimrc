@@ -75,10 +75,9 @@ let g:syntastic_python_checkers = ['python']
 "let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 
 """"""""""""""""""""""""""""""""""""
-" Python Setup
-"let g:pymode_python = ''
-"let g:pymode_python = 'python2'
-let g:pymode_lint_on_write = 0
+" Tab Movement Shortcuts
+"
+runtime macros/matchit.vim
 
 """"""""""""""""""""""""""""""""""""
 " Tab Movement Shortcuts
