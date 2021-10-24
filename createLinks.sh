@@ -24,9 +24,7 @@ else
   popd
 fi
 
-# Python Tooling venv
-python -m venv ./venv
-. ./venv/bin/activate
-pip install --upgrade pip
-pip install base16-shell-preview
-deactivate
+# XMonad
+mkdir -p ~/.xmonad
+ln -sf ~/dotfiles/xmonad/xmonad.hs ~/.xmonad/xmonad.hs
+ln -sf ~/dotfiles/xmonad/xmobarrc ~/.xmobarrc
