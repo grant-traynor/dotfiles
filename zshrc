@@ -80,7 +80,7 @@ source $ZSH/oh-my-zsh.sh
 #xmonad --restart
 
 # User configuration
-export PATH="$PATH:$(go env GOPATH)/bin"
+export PATH="/home/gkt/.local/bin:$PATH:$(go env GOPATH)/bin"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 

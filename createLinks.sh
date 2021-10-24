@@ -28,3 +28,4 @@ fi
 mkdir -p ~/.xmonad
 ln -sf ~/dotfiles/xmonad/xmonad.hs ~/.xmonad/xmonad.hs
 ln -sf ~/dotfiles/xmonad/xmobarrc ~/.xmobarrc
+ln -sf ~/dotfiles/xmonad/xinitrc ~/.xinitrc
