@@ -27,7 +27,6 @@ Plug 'vim-scripts/ZoomWin'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'altercation/vim-colors-solarized'
 Plug 'airblade/vim-gitgutter'
 Plug 'chrisbra/Colorizer'
 Plug 'pangloss/vim-javascript'
@@ -35,10 +34,11 @@ Plug 'leafgarland/typescript-vim'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'thosakwe/vim-flutter'
+Plug 'liuchengxu/vista.vim'
+Plug 'coyotebush/vim-pweave'
+Plug 'chriskempson/base16-vim'
 " - initialise the system
 call plug#end()
-" - enable the python lsc
-let g:lsc_server_commands = { 'python' : 'pyls'}
 
 """"""""""""""""""""""""""""""""""""
 " Encoding
@@ -52,13 +52,11 @@ map <leader>n :NERDTreeToggle<CR>
 map <leader>s :SyntasticToggleMode<CR>
 
 """"""""""""""""""""""""""""""""""""
-" Color Scheme / Soalrized
+" Sync Colorscheme With Alacritty On Linux
 syntax enable
-set background=dark
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
-let g:solarized_termcolors=256
-colorscheme solarized
+if filereadable(expand("~/.vimrc_background"))
+  source ~/.vimrc_background
+endif
 
 """"""""""""""""""""""""""""""""""""
 " Airline 

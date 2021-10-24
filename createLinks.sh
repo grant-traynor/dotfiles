@@ -1,27 +1,32 @@
 #!/bin/bash
 
 # Bash
-rm ~/.bashrc
-ln -s dotfiles/bashrc ~/.bashrc
+ln -sf ~/dotfiles/bashrc ~/.bashrc
+
+# Zsh
+ln -sf ~/dotfiles/zshrc ~/.zshrc
 
 # Vim
 mkdir -p ~/.vim
-ln -s dotfiles/vimrc ~/.vimrc
-ln -s dotfiles/gvimrc ~/.gvimrc
-ln -s ~/dotfiles/vim/after ~/.vim/after
+ln -sf ~/dotfiles/vimrc ~/.vimrc
+ln -sf ~/dotfiles/gvimrc ~/.gvimrc
+ln -sf ~/dotfiles/vim/after ~/.vim/after
 
-# Awesome
-#ln -s ~/dotfiles/awesome ~/.config/awesome
+# Alacritty
+mkdir -p ~/.config/alacritty/
+ln -sf ~/dotfiles/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
+# - Alacritty
+if [ ! -d "alacritty/base16-alacritty" ] ; then
+  git clone https://github.com/aarowill/base16-alacritty alacritty/base16-alacritty
+else
+  pushd alacritty/base16-alacritty
+  git pull origin
+  popd
+fi
 
-# Spectrm
-ln -s ~/dotfiles/spectrwm.conf ~/.spectrwm.conf
-ln -s ~/dotfiles/spectrwm_us.conf ~/.spectrwm_us.conf
-
-# Conky
-ln -s ~/dotfiles/conky.conf ~/.config/conky/conky.conf
-
-# Termite
-mkdir -p ~/.config/termite
-ln -s ~/dotfiles/termite/base16-solarized-dark.config ~/.config/termite/config
-
-
+# Python Tooling venv
+python -m venv ./venv
+. ./venv/bin/activate
+pip install --upgrade pip
+pip install base16-shell-preview
+deactivate
