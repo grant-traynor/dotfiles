@@ -22,9 +22,6 @@ fi
 
 export EDITOR=vim
 
-# Bash Powerline
-source ~/dotfiles/bash-powerline.sh
-
 # SSH Agent Stuff
 SSH_ENV="$HOME/.ssh/agent-env"
 function start_agent {
@@ -67,6 +64,12 @@ export PATH=$PATH:$HOME/local/android-studio/bin
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+# Locals
+if [ -f $HOME/local/env.sh ]
+then
+  source $HOME/local/env.sh
+fi
+
 # Flutter
 if [ -d $HOME/local/flutter/.pub-cache/bin ]
 then
@@ -78,3 +81,6 @@ export TERM=xterm-256color
 
 # Ansible Vault Password
 export ANSIBLE_VAULT_PASSWORD_FILE=$HOME/.ssh/ansible_vault
+
+# Port Knocker
+alias knock="nc -z"

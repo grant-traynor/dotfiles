@@ -13,32 +13,26 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 " - setup
 call plug#begin('~/.vim/plugged')
-" - Language Support Plugins
-Plug 'natebosch/vim-lsc'
-Plug 'natebosch/vim-lsc-dart'
-let g:lsc_server_commands = {'python' : 'pyls'}
-" - plugins
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'natebosch/vim-lsc'
+Plug 'natebosch/vim-lsc-dart'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/ZoomWin'
-Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'altercation/vim-colors-solarized'
 Plug 'airblade/vim-gitgutter'
 Plug 'chrisbra/Colorizer'
 Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
 Plug 'maksimr/vim-jsbeautify'
-Plug 'dart-lang/dart-vim-plugin'
 Plug 'thosakwe/vim-flutter'
-" - initialise the system
+Plug 'liuchengxu/vista.vim'
+Plug 'coyotebush/vim-pweave'
+Plug 'chriskempson/base16-vim'
+let g:lsc_server_commands = {'python' : 'pyls'}
 call plug#end()
-" - enable the python lsc
-let g:lsc_server_commands = { 'python' : 'pyls'}
 
 """"""""""""""""""""""""""""""""""""
 " Encoding
@@ -48,17 +42,13 @@ set encoding=utf-8
 " Key Mappings
 " NERDTREE
 map <leader>n :NERDTreeToggle<CR>
-" Syntastic
-map <leader>s :SyntasticToggleMode<CR>
 
 """"""""""""""""""""""""""""""""""""
-" Color Scheme / Soalrized
+" Sync Colorscheme With Alacritty On Linux
 syntax enable
-set background=dark
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
-let g:solarized_termcolors=256
-colorscheme solarized
+if filereadable(expand("~/.vimrc_background"))
+  source ~/.vimrc_background
+endif
 
 """"""""""""""""""""""""""""""""""""
 " Airline 
