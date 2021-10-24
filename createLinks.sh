@@ -15,14 +15,17 @@ ln -sf ~/dotfiles/vim/after ~/.vim/after
 # Alacritty
 mkdir -p ~/.config/alacritty/
 ln -sf ~/dotfiles/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
-# - Alacritty
-if [ ! -d "alacritty/base16-alacritty" ] ; then
-  git clone https://github.com/aarowill/base16-alacritty alacritty/base16-alacritty
+
+# Base16 Shell - Color Schemes
+pushd ~/.config
+if [ ! -d "base16-shell" ] ; then
+  git clone https://github.com/chriskempson/base16-shell.git base16-shell
 else
-  pushd alacritty/base16-alacritty
+  pushd base16-shell
   git pull origin
   popd
 fi
+popd
 
 # XMonad
 mkdir -p ~/.xmonad

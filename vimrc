@@ -47,6 +47,7 @@ map <leader>n :NERDTreeToggle<CR>
 " Sync Colorscheme With Alacritty On Linux
 syntax enable
 if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256  " Access colors present in 256 colorspace
   source ~/.vimrc_background
 endif
 

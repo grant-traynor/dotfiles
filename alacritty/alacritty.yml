@@ -851,43 +851,43 @@ draw_bold_text_with_bright_colors: true
   # Print all received window events.
   #print_events: false
 colors:
-  # COLORSCHEME: base16-ashes.yml
+  # COLORSCHEME: base16-dracula-256.yml
   # Default colors
   primary:
-    background: '0x1c2023'
-    foreground: '0xc7ccd1'
+    background: '0x282936'
+    foreground: '0xe9e9f4'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x1c2023'
-    cursor: '0xc7ccd1'
+    text: '0x282936'
+    cursor: '0xe9e9f4'
 
   # Normal colors
   normal:
-    black: '0x1c2023'
-    red: '0xc7ae95'
-    green: '0x95c7ae'
-    yellow: '0xaec795'
-    blue: '0xae95c7'
-    magenta: '0xc795ae'
-    cyan: '0x95aec7'
-    white: '0xc7ccd1'
+    black: '0x282936'
+    red: '0xea51b2'
+    green: '0xebff87'
+    yellow: '0x00f769'
+    blue: '0x62d6e8'
+    magenta: '0xb45bcf'
+    cyan: '0xa1efe4'
+    white: '0xe9e9f4'
 
   # Bright colors
   bright:
-    black: '0x747c84'
-    red: '0xc7c795'
-    green: '0x393f45'
-    yellow: '0x565e65'
-    blue: '0xadb3ba'
-    magenta: '0xdfe2e5'
-    cyan: '0xc79595'
-    white: '0xf3f4f5'
+    black: '0x626483'
+    red: '0xea51b2'
+    green: '0xebff87'
+    yellow: '0x00f769'
+    blue: '0x62d6e8'
+    magenta: '0xb45bcf'
+    cyan: '0xa1efe4'
+    white: '0xf7f7fb'
 
   indexed_colors:
-    - {index: 16, color: '0xf5871f'}
-    - {index: 17, color: '0xa3685a'}
-    - {index: 18, color: '0xe0e0e0'}
-    - {index: 19, color: '0xd6d6d6'}
-    - {index: 20, color: '0x969896'}
-    - {index: 21, color: '0x282a2e'}
+    - {index: 16, color: '0xb45bcf'}
+    - {index: 17, color: '0x00f769'}
+    - {index: 18, color: '0x3a3c4e'}
+    - {index: 19, color: '0x4d4f68'}
+    - {index: 20, color: '0x62d6e8'}
+    - {index: 21, color: '0xf1f2f8'}

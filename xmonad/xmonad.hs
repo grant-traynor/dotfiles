@@ -16,7 +16,7 @@ toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
 -- Main configuration, override the defaults to your liking.
 myConfig = def { 
-  terminal = "alacritty"
-  , modMask = mod4Mask
+    modMask = mod4Mask 
+  , terminal = "alacritty"
 }
 
