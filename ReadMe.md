@@ -3,9 +3,9 @@
   - xmobar
 
 # Termial Color Scheme
-  - base16 for both alacritty and vim
+  - base16 color schemes
   - https://github.com/chriskempson/base16
-  - https://github.com/aarowill/base16-alacritty
+  - https://github.com/chriskempson/base16-shell
   - https://github.com/chriskempson/base16-vim
 
 # Shell

@@ -107,12 +107,12 @@ export PATH="/home/gkt/.local/bin:$PATH:$(go env GOPATH)/bin"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vi="vim"
 
-# Terminal Emulator Configurations
-source ~/dotfiles/alacritty/setup.zsh
-
 # Base16 Shell
 export BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
+
+# Terminal Emulator Configurations
+source ~/dotfiles/alacritty/setup.zsh
 

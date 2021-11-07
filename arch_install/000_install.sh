@@ -8,4 +8,10 @@ yay -Syu --noconfirm
 yay -Sy --noconfirm adobe-source-code-pro-fonts
 
 # Terminal Emulators
-yay -Sy --noconfirm alacritty alacritty-colorscheme
+yay -Sy --noconfirm alacritty
+
+# Color Schemes
+git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+
+# Utilities
+yay -Sy --noconfirm scrot slock
