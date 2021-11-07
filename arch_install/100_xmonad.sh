@@ -16,7 +16,7 @@ mkdir -p ~/.config/xmonad && pushd ~/.config/xmonad
 
 if [ ! -d "xmonad" ] ; then
   git clone --branch $VER https://github.com/xmonad/xmonad
-  git clone --branc $VER https://github.com/xmonad/xmonad-contrib
+  git clone --branch $VER https://github.com/xmonad/xmonad-contrib
 else
   pushd xmonad
   git pull origin $VER
@@ -30,20 +30,14 @@ if [ ! -f "stack.yaml" ] ; then
   stack init --force
 fi
 
-stack install
 
 # Build file
-cat  <<EOF > build
-#!/bin/sh
+ln -sf /home/$USER/dotfiles/xmonad/build .
 
-exec stack ghc --  \\
-  --make xmonad.hs \\
-  -i               \\
-  -ilib            \\
-  -fforce-recomp   \\
-  -main-is main    \\
-  -v0              \\
-  -o "$1"
-EOF
+# Xsession file
+ln -sf /home/$USER/dotfiles/xmonad/xsession ~/.xsession
 
-chmod u+x build
+# Xsession file
+ln -sf /home/$USER/dotfiles/xmonad/xmonad.hs xmonad.hs
+
+stack install
