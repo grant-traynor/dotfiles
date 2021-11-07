@@ -9,7 +9,8 @@ yay -S --noconfirm \
 	git \
 	libx11 libxft libxinerama libxrandr libxss \
 	pkgconf \
-	xinit-xsession
+	xinit-xsession \
+	xclip scrot slock
 
 # xmonad from source
 mkdir -p ~/.config/xmonad && pushd ~/.config/xmonad
@@ -30,6 +31,8 @@ if [ ! -f "stack.yaml" ] ; then
   stack init --force
 fi
 
+# Clean up old config layouts. Now things live in ~/.config/xmonad
+rm -rf /home/$USER/.xmonad
 
 # Build file
 ln -sf /home/$USER/dotfiles/xmonad/build .

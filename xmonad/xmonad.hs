@@ -1,36 +1,78 @@
--- Imports.
 import XMonad
-import XMonad.Util.Ungrab
+
 import XMonad.Hooks.DynamicLog
-import XMonad.Util.EZConfig (additionalKeysP)
-import XMonad.Hooks.SetWMName
+import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers
+import XMonad.Hooks.StatusBar
+import XMonad.Hooks.StatusBar.PP
 
--- The main function.
-main = xmonad =<< statusBar myBar myPP toggleStrutsKey myConfig
+import XMonad.Util.EZConfig
+import XMonad.Util.Loggers
+import XMonad.Util.Ungrab
 
--- Command to launch the bar.
-myBar = "xmobar"
+import XMonad.Layout.Magnifier
+import XMonad.Layout.ThreeColumns
 
--- Custom PP, configure it as you like. It determines what is being written to the bar.
-myPP = xmobarPP { ppCurrent = xmobarColor "#429942" "" . wrap "<" ">" }
+import XMonad.Hooks.EwmhDesktops
 
--- Key binding to toggle the gap for the bar.
-toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
--- startupHook
-myStartupHook = do
-  spawn "~/dotfiles/xmonad/autostart.sh"
-  setWMName "LG3D"
+main :: IO ()
+main = xmonad
+     . ewmhFullscreen
+     . ewmh
+     . withEasySB (statusBarProp "xmobar" (pure myXmobarPP)) defToggleStrutsKey
+     $ myConfig
 
--- Main configuration, override the defaults to your liking.
-myConfig = def 
-  { modMask = mod4Mask 
-  , terminal = "alacritty"
-  , startupHook = myStartupHook
-  }
-  `additionalKeysP`
-  [ ("M-S-z", spawn "slock")
-  , ("M-S-=", unGrab *> spawn "scrot -s /tmp/screenshot.png && xclip -selection clipboard -t image/png -i /tmp/screenshot.png && rm /tmp/screenshot.png")
-  , ("M-]"  , spawn "chromium")
-  ]
+myConfig = def
+    { modMask    = mod4Mask      -- Rebind Mod to the Super key
+    , terminal   = "alacritty"   -- Use alacritty as the terminal emulator
+    , layoutHook = myLayout      -- Use custom layouts
+    , manageHook = myManageHook  -- Match on certain windows
+    }
+  `additionalKeysP`
+    [ ("M-S-z", spawn "slock")
+    , ("M-S-=", unGrab *> spawn "scrot -s"        )
+    , ("M-]"  , spawn "chromium"                   )
+    ]
 
+myManageHook :: ManageHook
+myManageHook = composeAll
+    [ className =? "Gimp" --> doFloat
+    , isDialog            --> doFloat
+    ]
+
+myLayout = tiled ||| Mirror tiled ||| Full ||| threeCol
+  where
+    threeCol = magnifiercz' 1.3 $ ThreeColMid nmaster delta ratio
+    tiled    = Tall nmaster delta ratio
+    nmaster  = 1      -- Default number of windows in the master pane
+    ratio    = 1/2    -- Default proportion of screen occupied by master pane
+    delta    = 3/100  -- Percent of screen to increment by when resizing panes
+
+myXmobarPP :: PP
+myXmobarPP = def
+    { ppSep             = blue " • "
+    , ppTitleSanitize   = xmobarStrip
+    , ppCurrent         = wrap " " "" . xmobarBorder "Top" "#8be9fd" 2
+    , ppHidden          = white . wrap " " ""
+    , ppHiddenNoWindows = lowWhite . wrap " " ""
+    , ppUrgent          = red . wrap (yellow "!") (yellow "!")
+    , ppOrder           = \[ws, l, _, wins] -> [ws, l, wins]
+    , ppExtras          = [logTitles formatFocused formatUnfocused]
+    }
+  where
+    formatFocused   = wrap (white    "[") (white    "]") . magenta . ppWindow
+    formatUnfocused = wrap (lowWhite "[") (lowWhite "]") . blue    . ppWindow
+
+    -- | Windows should have *some* title, which should not not exceed a
+    -- sane length.
+    ppWindow :: String -> String
+    ppWindow = xmobarRaw . (\w -> if null w then "untitled" else w) . shorten 30
+
+    blue, lowWhite, magenta, red, white, yellow :: String -> String
+    magenta  = xmobarColor "#ff79c6" ""
+    blue     = xmobarColor "#bd93f9" ""
+    white    = xmobarColor "#f8f8f2" ""
+    yellow   = xmobarColor "#f1fa8c" ""
+    red      = xmobarColor "#ff5555" ""
+    lowWhite = xmobarColor "#bbbbbb" ""
